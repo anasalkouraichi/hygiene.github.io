@@ -34,7 +34,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Copy HTML files
-        run: cp -R . _site
+        run: mkdir _site && cp -R $(ls -A | grep -v _site) _site/
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
